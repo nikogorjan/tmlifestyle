@@ -1,0 +1,216 @@
+@font-face {
+    font-family: 'PoppinsRegular';
+    src: url('../../../../public/Fonts/Poppins-Regular.ttf') format('woff2');
+}
+
+@font-face {
+    font-family: 'PoppinsMedium';
+    src: url('../../../../public/Fonts/Poppins-Medium.ttf') format('woff2');
+}
+
+@font-face {
+    font-family: 'PoppinsLight';
+    src: url('../../../../public/Fonts/Poppins-Light.ttf') format('woff2');
+}
+
+@font-face {
+    font-family: 'PoppinsBold';
+    src: url('../../../../public/Fonts/Poppins-Bold.ttf') format('woff2');
+}
+
+@font-face {
+    font-family: 'PoppinsBlack';
+    src: url('../../../../public/Fonts/Poppins-Black.ttf') format('woff2');
+}
+
+.hook-main{
+    width: 100%;
+    padding: 10vh 0;
+
+}
+
+.hook-row{
+    width: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hook-left{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hook-right{
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    
+    gap: 1rem;
+    box-sizing: border-box;
+}
+
+.gym-video{
+    width: calc(50% - 0.5rem); /* Adjust the width to account for the 1rem gap */
+    border-radius: 10px;
+}
+
+.hook-content-wrapper{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.HOOKHEADER{
+    text-align: left;
+}
+
+.undermargin{
+    margin-bottom: 64px;
+}
+
+.buttons-row-hook{
+    display: flex;
+
+}
+
+.outlined-button{
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+}
+
+.marginleft{
+    margin-left: 12px;
+}
+
+.email-inputt {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 40%; /* Adjust width as needed */
+    margin-top: 64px;
+    box-sizing: border-box; /* Ensures padding is included in width */
+  }
+
+  .input-roww{
+    display: flex;
+    align-items: center;
+    
+  }
+
+  .dontmargin{
+    margin-bottom: 0 !important;
+  }
+
+  .button-maring{
+    margin-bottom: 0px !important;
+  }
+  
+  .hundredwrapper{
+    width: 100% !important;
+
+  }
+
+  .margin-wrapper{
+    margin-bottom: 64px;
+  }
+
+  .marselvideo{
+  }
+
+@media screen and (max-width: 1100px) {
+    .hook-main{
+        width: 100%;
+    }
+    .hook-main{
+    }
+
+    .hook-row{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .hook-left{
+        width: 100%;
+    }
+
+    .HOOKHEADER{
+        text-align: left;
+    }
+    
+    .hook-right{
+        width: 100%;
+        text-align: center;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 64px;
+
+    }
+
+    .hook-email-senden{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .hook-email-senden{
+        margin-top: 64px !important;
+    }
+
+    .input-roww{
+        flex-direction: column;
+
+    }
+
+    .email-inputt {
+        
+        width: 100%; /* Adjust width as needed */
+        margin-top: 64px;
+        
+      }
+
+    .marging{
+        align-self: flex-start !important;
+        margin-left: 0;
+        margin-top: 32px;
+    }
+
+    .input-roww{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        
+      }
+
+      .hundredwrapper{
+        width: 90% !important;
+    
+      }
+
+      .mobiflex{
+        flex-direction: column;
+      }
+    
+      .margin-wrapper {
+        margin-bottom: 32px;
+    }
+
+   
+
+
+
+    
+.hook-content-wrapper{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+
+}
+    
+}
