@@ -56,8 +56,8 @@ const Hero = () => {
     const preberiButtonRef = useRef(null);
 
     const swiperRef = useRef(null);
-    const [slidesPerView, setSlidesPerView] = useState(4);
-    const [spaceBetween, setSpaceBetween] = useState(64);
+    const [slidesPerView, setSlidesPerView] = useState(isMobileDevice() ? 1.5 : 6);
+    const [spaceBetween, setSpaceBetween] = useState(isMobileDevice() ? window.innerWidth * 0.05 : 16);
     const [offset, setOffset] = useState(0);
 
     const swiperRef2 = useRef(null);
@@ -80,6 +80,10 @@ const Hero = () => {
     const pRef1 = useRef(null);
     const pRef2 = useRef(null);
     const pRef3 = useRef(null);
+
+    const [totalSlides, setTotalSlides] = useState(0); // Store the total number of slides
+    const [currentIndex, setCurrentIndex] = useState(0); // Store the current slide index
+    const [lastIndex, setLastIndex] = useState(0); 
 
 
     useEffect(() => {
@@ -436,8 +440,21 @@ const Hero = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            setSlidesPerView(isMobileDevice() ? 1.5 : 6);
-            setSpaceBetween(isMobileDevice() ? window.innerWidth * 0.05 : 16);
+            const mobile = isMobileDevice();
+            const newSlidesPerView = mobile ? 1.5 : 6;
+            const newSpaceBetween = mobile ? window.innerWidth * 0.05 : 16;
+
+            setSlidesPerView(newSlidesPerView);
+            setSpaceBetween(newSpaceBetween);
+
+            if (swiperRef.current) {
+                swiperRef.current.update(); // Force Swiper update when slidesPerView or spaceBetween changes
+
+                // Recalculate the last index
+                const total = swiperRef.current.slides.length;
+                const calculatedLastIndex = total - Math.ceil(newSlidesPerView) +1; // Using Math.ceil for fractional slidesPerView
+                setLastIndex(calculatedLastIndex < 0 ? 0 : calculatedLastIndex);
+            }
         };
 
         handleResize();  // Set the initial values based on current window size
@@ -480,6 +497,43 @@ const Hero = () => {
             swiperRef3.current.slidePrev();
         }
     };
+
+
+    const [direction, setDirection] = useState('forward'); // Track the current direction
+
+    useEffect(() => {
+        const swiperInstance = swiperRef.current;
+
+        if (!swiperInstance) return; // If swiper instance is not ready, return
+
+        const interval = setInterval(() => {
+            const swiper = swiperRef.current;
+            if (!swiper) return; // Ensure swiper is defined
+
+            if (direction === 'forward') {
+                if (swiper.activeIndex >= lastIndex) {
+                    // If we're at the last visible slide, change direction to backward
+                    setDirection('backward');
+                    swiper.slidePrev();
+                } else {
+                    // Slide to the next one
+                    swiper.slideNext();
+                }
+            } else if (direction === 'backward') {
+                if (swiper.activeIndex === 0) {
+                    // If we're at the first slide, change direction to forward
+                    setDirection('forward');
+                    swiper.slideNext();
+                } else {
+                    // Slide to the previous one
+                    swiper.slidePrev();
+                }
+            }
+        }, 2000); // Every 2 seconds
+
+        // Clear the interval on unmount
+        return () => clearInterval(interval);
+    }, [direction, lastIndex]); 
 
 
     return (
@@ -579,8 +633,15 @@ const Hero = () => {
                         centeredSlides={false}
                         mousewheel={true}
                         pagination={{ clickable: true }}
-                        onSlideChange={() => console.log('slide change')}
-                        onSwiper={(swiper) => swiperRef.current = swiper}
+                        onSwiper={(swiper) => {
+                            swiperRef.current = swiper; // Save the swiper instance
+                            //setTotalSlides(swiper.slides.length); // Set total slides on initialization
+                        }}
+                        onSlideChange={(swiper) => {
+                            //setCurrentIndex(swiper.activeIndex); // Update current index on slide change
+                            console.log('Current slide index:', swiper.activeIndex); // Log the current active index
+                            console.log('Total slides:', swiper.slides.length); // Log the total number of slides
+                        }}
                         className="testimonials-swiper"
                         ref={swiperRef}
 
