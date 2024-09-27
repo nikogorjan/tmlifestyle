@@ -61,14 +61,14 @@ const Prices = () => {
         {
             header: 'Trening v paru',
             paragraph: 'Challenge yourself with tougher routines.',
-            image: '/images/st2.webp',
+            image: '/images/st99.webp',
             difficulty: '280 € / 8 treningov',
             description: 'Vsebuje individualni plan prehrane, individualni plan treninga, plan prehranskih dopolnil, svetovanje pravilne izvedbe vaj preko video vsebine in v živo, tedenski check-in in update po potrebi.'
         },
         {
             header: 'Trening v paru',
             paragraph: 'Take your fitness to the next level.',
-            image: '/images/z9.webp',
+            image: '/images/st98.webp',
             difficulty: '250 € / 8 treningov',
             description: 'Samo treniranje brez plana prehrane in plana treningov.'
         },

@@ -116,7 +116,7 @@ const Enaena = () => {
                     </video>
 
                     <video
-                        src="/Videos/7.mp4"
+                        src="/Videos/12.mp4"
                         autoPlay
                         muted
                         playsInline

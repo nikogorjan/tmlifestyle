@@ -8,7 +8,7 @@ const Izguba = () => {
         <div className='izguba-main'>
             <div className='izguba-wrapper'>
                 <div className='izguba-img-wrapper'>
-                    <img src="/images/build3.webp" className='blogpost-img' alt='beginner' />
+                    <img src="/images/build4.webp" className='blogpost-img' alt='beginner' />
 
                 </div>
                 
@@ -113,7 +113,7 @@ const Izguba = () => {
                             </div>
 
                             <div className='target-right marginleft'>
-                                <img src="/images/cardio.webp" className='blogger-img' alt='beginner' />
+                                <img src="/images/cardio1.webp" className='blogger-img' alt='beginner' />
 
                             </div>
                         </div>

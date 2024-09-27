@@ -71,7 +71,7 @@ const Story = () => {
                         <div className='content-holder content-holder1'>
                             <p className='content-text black'>2021</p>
                             <img
-                                src="/images/m2.webp"
+                                src="/images/mm1.webp"
                                 alt="A couple"
                                 className='story-img'
                             />
@@ -87,7 +87,7 @@ const Story = () => {
                         <div className='content-holder content-holder2'>
                             <p className='content-text black'>2022</p>
                             <img
-                                src="/images/m3.webp"
+                                src="/images/mm2.webp"
                                 alt="A couple"
                                 className='story-img'
                             />
@@ -103,7 +103,7 @@ const Story = () => {
                         <div className='content-holder content-holder3'>
                             <p className='content-text black'>2023</p>
                             <img
-                                src="/images/m4.webp"
+                                src="/images/mm3.webp"
                                 alt="A couple"
                                 className='story-img'
                             />
@@ -119,7 +119,7 @@ const Story = () => {
                         <div className='content-holder content-holder4'>
                             <p className='content-text black'>2024</p>
                             <img
-                                src="/images/m5.webp"
+                                src="/images/mm4.webp"
                                 alt="A couple"
                                 className='story-img'
                             />

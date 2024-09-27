@@ -418,7 +418,7 @@ const Hero = () => {
 
 
     function isMobileDevice() {
-        return window.innerWidth <= 800;
+        return typeof window !== 'undefined' && window.innerWidth <= 800;
     }
 
     useEffect(() => {
@@ -799,7 +799,7 @@ const Hero = () => {
 
                     <div className='on-right'>
                         <video
-                            src="/Videos/10.mp4"
+                            src="/Videos/11.mp4"
                             autoPlay
                             muted
                             playsInline
@@ -959,100 +959,6 @@ const Hero = () => {
 
                 </div>
 
-
-
-
-                {/*<div className='white-wrapper'>
-                    <div className='header-wrapper'>
-                        <p className='text-regular-semibold hidden-header black section-indicator lighter' ref={whiteSmallRef}>Začni zdaj!</p>
-                    </div>
-                    <div className='header-wrapper'>
-                        <h3 className='heading-desktop-h3 black hidden-header' ref={whiteHeaderRef}>Ponujava širok nabor storitev! </h3>
-                    </div>
-
-                    <div className='header-wrapper'>
-                        <h3 className='text-medium-normal hidden-header black' ref={whiteTextRef}>Za vaše zdravje in dobro počutje.</h3>
-                    </div>
-
-                    <div className='programi-row'>
-                        <div className='program-cell' ref={program1Ref}>
-                            <div className='program-img-wrapper'>
-                                <img src="/images/s2.webp" className='program-img' alt='beginner' />
-                            </div>
-                            <div className='ontopmrgin'></div>
-                            <div className='highlighted-row'>
-                                <div className='blog-header-wrapper black highlighted-gray'>
-                                    <p className='text-regular-semibold  nomargins'>Fleksibilnost</p>
-                                </div>
-                                <div className='blog-header-wrapper black highlighted-gray'>
-                                    <p className='text-regular-semibold  nomargins'>Prilagojen program</p>
-                                </div>
-                                <div className='blog-header-wrapper black highlighted-gray'>
-                                    <p className='text-regular-semibold  nomargins'>Prilagodljiv urnik</p>
-                                </div>
-                            </div>
-
-                            <h4 className='program-header black align-left'>Spletno trenerstvo</h4>
-                            <h3 className='text-medium-normal black align-left' >Prilagojen program za vsakogar, kjerkoli že ste.</h3>
-
-                        </div>
-
-                        <div className='program-cell' ref={program2Ref}>
-                            <div className='program-img-wrapper'>
-                                <img src="/images/s1.webp" className='program-img' alt='intermediate' />
-                            </div>
-                            <div className='ontopmrgin'></div>
-                            <div className='highlighted-row'>
-                                <div className='blog-header-wrapper black highlighted-gray'>
-                                    <p className='text-regular-semibold  nomargins'>Osebni trener</p>
-                                </div>
-                                <div className='blog-header-wrapper black highlighted-gray'>
-                                    <p className='text-regular-semibold  nomargins'>Hitri rezultati</p>
-                                </div>
-                                <div className='blog-header-wrapper black highlighted-gray'>
-                                    <p className='text-regular-semibold  nomargins'>Osebna motivacija</p>
-                                </div>
-                            </div>
-                            <h4 className='program-header black align-left'>Treningi 1 na 1</h4>
-                            <h3 className='text-medium-normal black align-left' >Osebni pristop za hitrejše doseganje vaših ciljev.</h3>
-
-                        </div>
-
-                        <div className='program-cell' ref={program3Ref}>
-                            <div className='program-img-wrapper'>
-                                <img src="/images/s3.webp" className='program-img' alt='advanced' />
-                            </div>
-                            <div className='ontopmrgin'></div>
-                            <div className='highlighted-row'>
-                                <div className='blog-header-wrapper black highlighted-gray'>
-                                    <p className='text-regular-semibold  nomargins'>Strokovni nasveti</p>
-                                </div>
-                                <div className='blog-header-wrapper black highlighted-gray'>
-                                    <p className='text-regular-semibold  nomargins'>Pregled napredka</p>
-                                </div>
-                                <div className='blog-header-wrapper black highlighted-gray'>
-                                    <p className='text-regular-semibold  nomargins'>Motivacija</p>
-                                </div>
-                            </div>
-                            <h4 className='program-header black align-left'>Video svetovanje</h4>
-                            <h3 className='text-medium-normal black align-left' >Strokovni nasveti, ki vam pomagajo napredovati.</h3>
-
-                        </div>
-                    </div>
-
-
-
-
-
-                    <div className='button-holder' ref={preberiButtonRef}>
-                        <HoverButton
-                            text="Preberi več"
-                            onClick={() => handleNavigation('sl/Plans')}
-                        />
-                    </div>
-
-
-                </div>*/}
             </div>
 
 

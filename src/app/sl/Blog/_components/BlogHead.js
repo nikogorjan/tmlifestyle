@@ -110,7 +110,7 @@ const BlogHead = () => {
                         <div className='program-cell opacity-cell' >
                             <div>
                                 <div className='program-img-wrapper'>
-                                    <img src="/images/build3.webp" className='program-img' alt='beginner' onClick={() => handleNavigation('/sl/Blog/izguba-odvecnih-kilogramov')} />
+                                    <img src="/images/build4.webp" className='program-img' alt='beginner' onClick={() => handleNavigation('/sl/Blog/izguba-odvecnih-kilogramov')} />
                                 </div>
                                 <div className='ontopmrgin'></div>
                                 <div className='highlighted-row'>
@@ -134,7 +134,7 @@ const BlogHead = () => {
 
                         <div className='program-cell opacity-cell'>
                             <div><div className='program-img-wrapper'>
-                                <img src="/images/build2.webp" className='program-img' alt='intermediate' onClick={() => handleNavigation('/sl/Blog/skrivnost-pridobivanja-misicne-mase')} />
+                                <img src="/images/build99.webp" className='program-img' alt='intermediate' onClick={() => handleNavigation('/sl/Blog/skrivnost-pridobivanja-misicne-mase')} />
                             </div>
 
                                 <div className='ontopmrgin'></div>

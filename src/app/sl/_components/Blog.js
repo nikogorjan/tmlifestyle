@@ -35,7 +35,7 @@ const Blog = () => {
                     <div className='programi-row'>
                         <div className='program-cell opacity-cell' >
                             <div className='program-img-wrapper'>
-                                <img src="/images/build3.webp" className='program-img hoverim' alt='beginner' onClick={() => handleNavigation('/sl/Blog/izguba-odvecnih-kilogramov')} />
+                                <img src="/images/build4.webp" className='program-img hoverim' alt='beginner' onClick={() => handleNavigation('/sl/Blog/izguba-odvecnih-kilogramov')} />
                             </div>
                             <div className='ontopmrgin'></div>
                             <div className='highlighted-row'>

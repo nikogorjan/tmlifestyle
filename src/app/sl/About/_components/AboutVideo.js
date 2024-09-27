@@ -6,7 +6,7 @@ const AboutVideo = () => {
         <div className='about-video-main'>
             <div className='about-video-wrapper'>
                 <video
-                    src="/Videos/tmd.mp4"
+                    src="/Videos/tm.mp4"
                     autoPlay
                     muted
                     playsInline
@@ -15,7 +15,7 @@ const AboutVideo = () => {
                 </video>
 
                 <video
-                    src="/Videos/tmd.mp4"
+                    src="/Videos/tm.mp4"
                     autoPlay
                     muted
                     playsInline

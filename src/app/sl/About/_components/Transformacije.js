@@ -7,9 +7,13 @@ import 'swiper/swiper-bundle.css';
 import 'swiper/css';
 
 const Transformacije = () => {
+    function isMobileDevice() {
+        return typeof window !== 'undefined' && window.innerWidth <= 800;
+    }
+
     const swiperRef = useRef(null);
-    const [slidesPerView, setSlidesPerView] = useState(4);
-    const [spaceBetween, setSpaceBetween] = useState(64);
+    const [slidesPerView, setSlidesPerView] = useState(isMobileDevice() ? 1.5 : 6);
+    const [spaceBetween, setSpaceBetween] = useState(isMobileDevice() ? window.innerWidth * 0.05 : 16);
     const [offset, setOffset] = useState(0);
 
     const goPrev = () => {
@@ -29,9 +33,7 @@ const Transformacije = () => {
     };
 
 
-    function isMobileDevice() {
-        return window.innerWidth <= 800;
-    }
+    
 
     useEffect(() => {
         // This code will only run on the client-side
@@ -52,8 +54,21 @@ const Transformacije = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            setSlidesPerView(isMobileDevice() ? 1.5 : 6);
-            setSpaceBetween(isMobileDevice() ? window.innerWidth * 0.05 : 16);
+            const mobile = isMobileDevice();
+            const newSlidesPerView = mobile ? 1.5 : 6;
+            const newSpaceBetween = mobile ? window.innerWidth * 0.05 : 16;
+
+            setSlidesPerView(newSlidesPerView);
+            setSpaceBetween(newSpaceBetween);
+
+            if (swiperRef.current) {
+                swiperRef.current.update(); // Force Swiper update when slidesPerView or spaceBetween changes
+
+                // Recalculate the last index
+                const total = swiperRef.current.slides.length;
+                const calculatedLastIndex = total - Math.ceil(newSlidesPerView) +1; // Using Math.ceil for fractional slidesPerView
+                setLastIndex(calculatedLastIndex < 0 ? 0 : calculatedLastIndex);
+            }
         };
 
         handleResize();  // Set the initial values based on current window size
@@ -63,6 +78,43 @@ const Transformacije = () => {
             window.removeEventListener('resize', handleResize);  // Clean up
         };
     }, []);
+
+    const [lastIndex, setLastIndex] = useState(0); 
+    const [direction, setDirection] = useState('forward'); // Track the current direction
+
+    useEffect(() => {
+        const swiperInstance = swiperRef.current;
+
+        if (!swiperInstance) return; // If swiper instance is not ready, return
+
+        const interval = setInterval(() => {
+            const swiper = swiperRef.current;
+            if (!swiper) return; // Ensure swiper is defined
+
+            if (direction === 'forward') {
+                if (swiper.activeIndex >= lastIndex) {
+                    // If we're at the last visible slide, change direction to backward
+                    setDirection('backward');
+                    swiper.slidePrev();
+                } else {
+                    // Slide to the next one
+                    swiper.slideNext();
+                }
+            } else if (direction === 'backward') {
+                if (swiper.activeIndex === 0) {
+                    // If we're at the first slide, change direction to forward
+                    setDirection('forward');
+                    swiper.slideNext();
+                } else {
+                    // Slide to the previous one
+                    swiper.slidePrev();
+                }
+            }
+        }, 2000); // Every 2 seconds
+
+        // Clear the interval on unmount
+        return () => clearInterval(interval);
+    }, [direction, lastIndex]); 
     
 
     return (
